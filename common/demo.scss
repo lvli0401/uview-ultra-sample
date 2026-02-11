@@ -1,0 +1,59 @@
+.u-block{
+	padding: 14px;
+	&__section{
+		margin-bottom:10px;
+	}
+	&__title {
+		margin-top:10px;
+		
+		margin-bottom: 10px;
+		display: flex;
+		.text {
+			font-size: 15px;
+			color: $up-content-color;
+		}
+	}
+	&__flex{
+		display: flex;
+	}
+}
+
+// 使用了cell组件的icon图片样式
+.u-cell-icon {
+	width: 36rpx;
+	height: 36rpx;
+	margin-right: 8rpx;
+}
+
+.u-page {
+	padding: 15px 15px 40px 15px;
+	&__item {
+		&__title {
+			margin-bottom: 8px;
+			@include flex;
+			.text {
+				font-size: 14px;
+				color: rgb(143, 156, 162);
+			}
+		}
+	}
+}
+
+.u-demo-block {
+	margin-bottom: 23px;
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+	}
+	
+	&__title {
+		margin-bottom: 8px;
+		@include flex;
+		.text {
+			font-size: 14px;
+			color: rgb(143, 156, 162);
+		}
+	}
+}
+

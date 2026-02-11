@@ -1,0 +1,171 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/example/components",
+			"style": {
+				"navigationBarTitleText": "uview-plus"
+			}
+		},
+		// 演示-模板
+		{
+			"path": "pages/example/template",
+			"style": {
+				"navigationBarTitleText": "模板"
+			}
+		}
+	],
+	"subPackages": [{
+		"root": "pages/componentsA",
+		"pages": [
+		]
+	}, {
+		"root": "pages/componentsB",
+		"pages": [
+		]
+	}, {
+		"root": "pages/componentsC",
+		"pages": [
+		
+		]
+	},
+	{
+		"root": "pages/componentsD",
+		"pages": [
+			// {
+			// 	"path": "qrcode/qrcode",
+			// 	"style": {
+			// 		"navigationBarTitleText": "二维码"
+			// 	}
+			// },
+		]
+	},
+	{
+		"root": "pages/template",
+		"pages": [
+			// wxCenter 仿微信个人中心
+			// {
+			// 	"path": "wxCenter/index",
+			// 	"style": {
+			// 		"navigationBarTitleText": "wxCenter 仿微信个人中心",
+			// 		"navigationStyle": "custom"
+			// 	}
+			// },
+			// // keyboardPay 自定义键盘支付
+			// {
+			// 	"path": "keyboardPay/index",
+			// 	"style": {
+			// 		"navigationBarTitleText": "keyboardPay 自定义键盘支付"
+			// 	}
+			// },
+			// // douyin 仿抖音
+			// // {
+			// // 	"path": "douyin/index",
+			// // 	"style": {
+			// // 		"navigationBarTitleText": "douyin 仿抖音"
+			// // 	}
+			// // },
+			// // mallMenu商城分类
+			// {
+			// 	"path": "mallMenu/index2",
+			// 	"style": {
+			// 		"navigationBarTitleText": "mallMenu-商城分类"
+			// 	}
+			// },
+			// // mallMenu商城分类
+			// {
+			// 	"path": "mallMenu/index1",
+			// 	"style": {
+			// 		"navigationBarTitleText": "mallMenu-商城分类"
+			// 	}
+			// },
+			// // coupon优惠券
+			// {
+			// 	"path": "coupon/index",
+			// 	"style": {
+			// 		"navigationBarTitleText": "coupon-优惠券"
+			// 	}
+			// },
+			// {
+			// 	"path": "login/index",
+			// 	"style": {
+			// 		"navigationBarTitleText": "美团登录"
+			// 	}
+			// },
+			// // 城市选择
+			// {
+			// 	"path": "citySelect/index",
+			// 	"style": {
+			// 		"navigationBarTitleText": "城市选择"
+			// 	}
+			// },
+			// // SubmitBar提交订单栏
+			// {
+			// 	"path": "submitBar/index",
+			// 	"style": {
+			// 		"navigationBarTitleText": "提交订单栏"
+			// 	}
+			// },
+			// // comment评论
+			// {
+			// 	"path": "comment/index",
+			// 	"style": {
+			// 		"navigationBarTitleText": "评论"
+			// 	}
+			// },
+			// // comment评论详情
+			// {
+			// 	"path": "comment/reply",
+			// 	"style": {
+			// 		"navigationBarTitleText": "评论详情"
+			// 	}
+			// },
+			// // order订单
+			// {
+			// 	"path": "order/index",
+			// 	"style": {
+			// 		"navigationBarTitleText": "订单"
+			// 	}
+			// },
+			// // login登录获取验证码
+			// {
+			// 	"path": "login/code",
+			// 	"style": {
+			// 		"navigationBarTitleText": "登录获取验证码"
+			// 	}
+			// },
+			// // address用户地址
+			// {
+			// 	"path": "address/index",
+			// 	"style": {
+			// 		"navigationBarTitleText": "用户地址"
+			// 	}
+			// },
+			// // address添加用户地址
+			// {
+			// 	"path": "address/addSite",
+			// 	"style": {
+			// 		"navigationBarTitleText": "添加用户地址"
+			// 	}
+			// }
+		]
+	}],
+	"preloadRule": {
+		"pages/example/components": {
+			"network": "all",
+			"packages": ["pages/componentsA", "pages/componentsB"]
+		}
+	},
+	"easycom": {
+		// 注意一定要放在custom里，否则无效，https://ask.dcloud.net.cn/question/131175
+		"custom": {
+			"^up-(.*)": "@/uni_modules/uview-plus/components/up-$1/up-$1.uvue"
+		}
+	},
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app x",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"uniIdRouter": {}
+}

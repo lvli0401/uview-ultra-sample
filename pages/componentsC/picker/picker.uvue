@@ -1,0 +1,212 @@
+<template>
+	<view class="u-page" ref="page">
+		<up-navbar
+			title="选择器"
+			@leftClick="navigateBack"
+			safeAreaInsetTop
+			fixed
+			placeholder
+		></up-navbar>
+		<up-cell-group>
+			<up-cell
+				@click="showPicker(index)"
+				:title="item['title']"
+				v-for="(item, index) in list"
+				:key="index"
+				isLink
+			>
+				<template #icon>
+					<image
+						class="u-cell-icon"
+						:src="item['iconUrl']"
+						mode="widthFix"
+					></image>
+				</template>
+			</up-cell>
+		</up-cell-group>
+		<up-picker
+			:show="show1"
+			:columns="columns1"
+			@change="change"
+			@cancel="cancel"
+			@confirm="confirm"
+		></up-picker>
+		<up-picker
+			:show="show2"
+			:columns="columns2"
+			:defaultIndex="[1]"
+			@cancel="cancel"
+			@confirm="confirm"
+			@change="change"
+		></up-picker>
+		<up-picker
+			:show="show3"
+			:columns="columns3"
+			ref="uPicker3"
+			@cancel="cancel"
+			@confirm="confirm"
+			@change="changeHandler1"
+		></up-picker>
+		<up-picker
+			:show="show4"
+			:columns="columns4"
+			@cancel="cancel"
+			@confirm="confirm"
+			:loading="loading"
+			@change="changeHandler2"
+			ref="uPicker4"
+		></up-picker>
+		<up-picker
+			:show="show5"
+			:columns="columns5"
+			title="标题太长就会显示省略号"
+			@cancel="cancel"
+			@confirm="confirm"
+			@change="change"
+		></up-picker>
+		<up-picker
+			:show="show6"
+			:columns="columns6"
+			closeOnClickOverlay
+			@cancel="cancel"
+			@confirm="confirm"
+			@close="close"
+			@change="change"
+		></up-picker>
+	</view>
+</template>
+
+<script>
+	import { sleep } from '@/uni_modules/uview-ultra/libs/function/index'
+	export default {
+		data() {
+			return {
+				index: '0',
+				loading: false,
+				columnData: [
+					['深圳', '厦门', '上海', '拉萨'],
+					['得州', '华盛顿', '纽约', '阿拉斯加']
+				],
+				columns1: [
+					['中国', '美国', '日本']
+				],
+				columns2: [
+					['中国', '美国', '日本']
+				],
+				columns3: [
+					['中国', '美国'],
+					['深圳', '厦门', '上海', '拉萨']
+				],
+				columns4: [
+					['中国', '美国'],
+					['深圳', '厦门', '上海', '拉萨']
+				],
+				columns5: [
+					['中国', '美国', '日本']
+				],
+				columns6: [
+					['中国', '美国', '日本']
+				],
+				columns7: [
+					[{
+						label: '苹果',
+						value: 1
+					}, {
+						label: '橘子',
+						value: 2
+					},
+					{
+						label: '香蕉',
+						value: 3
+					}]
+				],
+				show1: false,
+				show2: false,
+				show3: false,
+				show4: false,
+				show5: false,
+				show6: false,
+				list: [{
+						title: '基础使用',
+						iconUrl: 'https://cdn.uviewui.com/uview/demo/picker/2.png'
+					},
+					{
+						title: '设置默认项',
+						iconUrl: 'https://cdn.uviewui.com/uview/demo/picker/5.png'
+					},
+					{
+						title: '多列联动',
+						iconUrl: 'https://cdn.uviewui.com/uview/demo/picker/1.png'
+					},
+					{
+						title: '加载中状态(切换第一列)',
+						iconUrl: 'https://cdn.uviewui.com/uview/demo/picker/3.png'
+					},
+					{
+						title: '设置标题',
+						iconUrl: 'https://cdn.uviewui.com/uview/demo/picker/4.png'
+					}, {
+						title: '允许点击遮罩关闭',
+						iconUrl: 'https://cdn.uviewui.com/uview/demo/picker/6.png'
+					},
+				]
+			}
+		},
+		methods: {
+			changeHandler1(e: UTSJSONObject): void {
+				this.change(e)
+				let columnIndex = e.getNumber('columnIndex')
+				let value = e.getArray('value')
+				let values = e.getArray('values')
+				let index = e.getNumber('index')
+				let picker = this.$refs['uPicker3']
+				if (columnIndex == 0) {
+					// picker.setColumnValues(1, this.columnData[index])
+				}
+			},
+			changeHandler2(e: UTSJSONObject): void {
+				this.change(e)
+				let columnIndex = e.getNumber('columnIndex')
+				let value = e.getArray('value')
+				let values = e.getArray('values')
+				let index = e.getNumber('index')
+				let picker = this.$refs['uPicker4']
+				if (columnIndex == 0) {
+					this.loading = true
+					//sleep(1500).then(() => {
+						// picker.setColumnValues(1, this.columnData[index])
+						this.loading = false
+					//})
+				}
+			},
+			navigateBack(): void {
+				uni.navigateBack()
+			},
+			change(e: any): void {
+				// console.log('change', e);
+			},
+			showPicker(index: number): void {
+				this.index = (parseInt(index.toString()) + 1).toString()
+				this.$data[`show${this.index}`] = true
+			},
+			close(): void {
+				// console.log('close');
+				this.$data[`show${this.index}`] = false
+			},
+			confirm(e: any): void {
+				// console.log('confirm', e);
+				this.$data[`show${this.index}`] = false
+			},
+			cancel(): void {
+				// console.log('cancel');
+				this.$data[`show${this.index}`] = false
+			}
+		},
+	}
+</script>
+
+<style lang="scss">
+	.u-page {
+		padding: 0;
+	}
+</style>
