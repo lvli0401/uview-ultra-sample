@@ -83,7 +83,7 @@ export const mount$u = function() {
 
 // #ifdef H5
 const importFn = import.meta.glob('./components/up-*/up-*.vue', { eager: true })
-const miniImportFn = import.meta.glob('./components/up-*/up-*.uvue', { eager: true })
+// const miniImportFn = import.meta.glob('./components/up-*/up-*.uvue', { eager: true })
 let components = [];
 
 // 批量注册全局组件
@@ -101,16 +101,16 @@ for (const key in importFn) {
 }
 
 // 注册 .uvue 组件
-for (const key in miniImportFn) {
-    let component = miniImportFn[key].default;
-    if (component.name) {
-        component.install = function (Vue) {
-            Vue.component(component.name, component);
-        };
+// for (const key in miniImportFn) {
+//     let component = miniImportFn[key].default;
+//     if (component.name) {
+//         component.install = function (Vue) {
+//             Vue.component(component.name, component);
+//         };
         
-        components.push(component);
-    }
-}
+//         components.push(component);
+//     }
+// }
 // #endif
 
 function toCamelCase(str) {
@@ -141,5 +141,5 @@ const install = (Vue) => {
 
 export default {
     install,
-    UpNoNetwork,
+    // UpNoNetwork,
 }

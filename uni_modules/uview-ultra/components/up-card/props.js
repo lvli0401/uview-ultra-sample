@@ -1,7 +1,7 @@
 import { defineMixin } from '../../libs/vue.js'
 import defProps from '../../libs/config/props.js'
 
-export const propsCard = defineMixin({
+export const props = defineMixin({
     props: {
         // 与屏幕两侧是否留空隙
 		full: {

@@ -1,7 +1,7 @@
 import { defineMixin } from '../../libs/vue.js'
 import defProps from '../../libs/config/props.js'
 
-export const propsRow = defineMixin({
+export const props = defineMixin({
     props: {
         // 给col添加间距，左右边距各占一半
         gutter: {

@@ -70,7 +70,7 @@ function formatMedia(res) {
 function formatFile(res) {
     return res.tempFiles.map((item) => ({ 
 		...pickExclude(item, ['path']), 
-		url: item.path, 
+		url: item.path,
 		size:item.size,
 		// #ifdef H5
 		name: item.name,

@@ -47,7 +47,7 @@
 </template>
 
 <script>
-	import { propsCell } from './props.js';
+	import { props } from './props.js';
 	import { mpMixin } from '../../libs/mixin/mpMixin.js';
 	import { mixin } from '../../libs/mixin/mixin.js';
 	import { addStyle } from '../../libs/function/index.js';
@@ -87,7 +87,7 @@
 
 			}
 		},
-		mixins: [mpMixin, mixin, propsCell],
+		mixins: [props],
 		computed: {
 			titleTextStyle() {
 				return addStyle(this.titleStyle)

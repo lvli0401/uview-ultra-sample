@@ -64,7 +64,7 @@
 </template>
 
 <script>
-	import { propsImage } from './props.js';
+	import { props } from './props.js';
 	import { mpMixin } from '../../libs/mixin/mpMixin.js';
 	import { mixin } from '../../libs/mixin/mixin.js';
 	import { addUnit, addStyle, deepMerge } from '../../libs/function/index.js';
@@ -96,7 +96,7 @@
 	 */
 	export default {
 		name: 'up-image',
-		mixins: [mpMixin, mixin, propsImage],
+		mixins: [props],
 		data() {
 			return {
 				// 图片是否加载错误，如果是，则显示错误占位图

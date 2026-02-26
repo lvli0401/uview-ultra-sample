@@ -58,7 +58,7 @@
 </template>
 
 <script>
-	import { propsLoadicon } from './props.js';
+	import { props } from './props.js';
 	import { mpMixin } from '../../libs/mixin/mpMixin.js';
 	import { mixin } from '../../libs/mixin/mixin.js';
 	import { addUnit, addStyle } from '../../libs/function/index.js';
@@ -86,7 +86,7 @@
 	 */
 	export default {
 		name: 'up-loading-icon',
-		mixins: [mpMixin, mixin, propsLoadicon],
+		mixins: [props],
 		data() {
 			return {
 				// Array.form可以通过一个伪数组对象创建指定长度的数组

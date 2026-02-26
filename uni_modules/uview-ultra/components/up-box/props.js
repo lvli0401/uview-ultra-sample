@@ -1,7 +1,7 @@
 import { defineMixin } from '../../libs/vue.js'
 import defProps from './box.js'
 
-export const propsBox = defineMixin({
+export const props = defineMixin({
     props: {
         // 背景色
         bgColors: {

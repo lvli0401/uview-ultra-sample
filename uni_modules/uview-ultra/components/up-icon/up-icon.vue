@@ -48,7 +48,7 @@
 
 	// 引入图标名称，已经对应的unicode
 	import icons from './icons.js'
-	import { propsIcon } from './props.js';
+	import { props } from './props.js';
 	import { mpMixin } from '../../libs/mixin/mpMixin.js';
 	import { mixin } from '../../libs/mixin/mixin.js';
 	import { addUnit, addStyle } from '../../libs/function/index.js';
@@ -87,7 +87,7 @@
 			}
 		},
 		emits: ['click'],
-		mixins: [mpMixin, mixin, propsIcon],
+		mixins: [props],
 		computed: {
 			uClasses() {
 				let classes = []

@@ -3,7 +3,7 @@
 </template>
 
 <script>
-	import { propsGap } from './props.js';
+	import { props } from './props.js';
 	import { mpMixin } from '../../libs/mixin/mpMixin.js';
 	import { mixin } from '../../libs/mixin/mixin.js';
 	import { addStyle, addUnit, deepMerge } from '../../libs/function/index.js';
@@ -21,7 +21,7 @@
 	 */
 	export default {
 		name: "up-gap",
-		mixins: [mpMixin, mixin, propsGap],
+		mixins: [props],
 		computed: {
 			gapStyle() {
 				const style = {

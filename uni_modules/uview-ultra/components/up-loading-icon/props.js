@@ -1,7 +1,7 @@
 import { defineMixin } from '../../libs/vue.js'
 import defProps from '../../libs/config/props.js'
 
-export const propsLoadicon = defineMixin({
+export const props = defineMixin({
     props: {
         // 是否显示组件
         show: {

@@ -1,7 +1,7 @@
 import { defineMixin } from '../../libs/vue.js'
 import defProps from '../../libs/config/props.js'
 
-export const propsGap = defineMixin({
+export const props = defineMixin({
     props: {
         // 背景颜色（默认transparent）
         bgColor: {

@@ -1,7 +1,7 @@
 import { defineMixin } from '../../libs/vue.js'
 import defProps from '../../libs/config/props.js'
 
-export const propsButton = defineMixin({
+export const props = defineMixin({
     props: {
         // 是否细边框
         hairline: {

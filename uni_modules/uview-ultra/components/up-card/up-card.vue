@@ -72,7 +72,7 @@
 </template>
 
 <script>
-    import { propsCard } from './props.js';
+    import { props } from './props.js';
     import { mpMixin } from '../../libs/mixin/mpMixin.js';
     import { mixin } from '../../libs/mixin/mixin.js';
     import { addStyle, addUnit, getPx } from '../../libs/function/index.js';
@@ -113,7 +113,7 @@
         data() {
             return {};
         },
-        mixins: [mpMixin, mixin, propsCard],
+        mixins: [props],
         emits: ['click', 'head-click', 'body-click', 'foot-click'],
         methods: {
 			addStyle,

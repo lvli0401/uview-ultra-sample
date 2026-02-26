@@ -7,7 +7,7 @@
 </template>
 
 <script>
-	import { propsLink } from './props.js';
+	import { props } from './props.js';
 	import { mpMixin } from '../../libs/mixin/mpMixin.js';
 	import { mixin } from '../../libs/mixin/mixin.js';
 	import { addStyle, addUnit, getPx, toast } from '../../libs/function/index.js';
@@ -28,7 +28,7 @@
 	 */
 	export default {
 		name: "up-link",
-		mixins: [mpMixin, mixin, propsLink],
+		mixins: [props],
 		computed: {
 			linkStyle() {
 				const style = {

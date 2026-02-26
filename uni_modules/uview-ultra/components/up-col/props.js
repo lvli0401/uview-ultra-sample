@@ -1,7 +1,7 @@
 import { defineMixin } from '../../libs/vue.js'
 import defProps from '../../libs/config/props.js'
 
-export const propsCol = defineMixin({
+export const props = defineMixin({
     props: {
         // 占父容器宽度的多少等分，总分为12份
         span: {

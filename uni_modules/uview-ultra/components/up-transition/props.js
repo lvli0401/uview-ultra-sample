@@ -1,7 +1,7 @@
 import { defineMixin } from '../../libs/vue.js'
 import defProps from '../../libs/config/props.js'
 
-export const propsTransition = defineMixin({
+export const props = defineMixin({
     props: {
         // 是否展示组件
         show: {
