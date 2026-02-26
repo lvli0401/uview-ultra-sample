@@ -251,13 +251,7 @@ export default {
 <style lang="scss" scoped>
 @import "../../libs/css/components.scss";
 
-/* #ifndef APP-NVUE */
 @import "./vue.scss";
-/* #endif */
-
-/* #ifdef APP-NVUE */
-@import "./nvue.scss";
-/* #endif */
 
 $up-button-up-button-height: 40px !default;
 $up-button-text-font-size: 15px !default;
