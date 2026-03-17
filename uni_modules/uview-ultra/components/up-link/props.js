@@ -1,6 +1,6 @@
 import { defineMixin } from '../../libs/vue.js'
 import defProps from '../../libs/config/props.js'
-export const props = defineMixin({
+export const propsLink = defineMixin({
     props: {
         // 文字颜色
         color: {

@@ -741,7 +741,3 @@ export default {
 	pages,
 	// setConfig
 }
-
-export function getDeviceInfo() {
-	return uni.getDeviceInfo ? uni.getDeviceInfo() : uni.getSystemInfoSync()
-}

@@ -1,4 +1,5 @@
 <template>
+    <!-- #ifndef APP-NVUE -->
     <button
         :hover-start-time="Number(hoverStartTime)"
         :hover-stay-time="Number(hoverStayTime)"
@@ -54,15 +55,66 @@
             </slot>
         </template>
     </button>
+    <!-- #endif -->
 
+    <!-- #ifdef APP-NVUE -->
+    <view
+        :hover-start-time="Number(hoverStartTime)"
+        :hover-stay-time="Number(hoverStayTime)"
+        class="up-button"
+        :hover-class="
+            !disabled && !loading && !color && (plain || type === 'info')
+                ? 'up-button--active--plain'
+                : !disabled && !loading && !plain
+                ? 'up-button--active'
+                : ''
+        "
+        @tap="clickHandler"
+        :class="bemClass"
+        :style="[baseColor, addStyle(customStyle)]"
+    >
+        <template v-if="loading">
+            <up-loading-icon
+                :mode="loadingMode"
+                :size="loadingSize * 1.15"
+                :color="loadingColor"
+            ></up-loading-icon>
+            <text
+                class="up-button__loading-text"
+                :style="[nvueTextStyle]"
+                :class="[plain && `up-button__text--plain--${type}`]"
+                >{{ loadingText || text }}</text
+            >
+        </template>
+        <template v-else>
+            <up-icon
+                v-if="icon"
+                :name="icon"
+                :color="iconColorCom"
+                :size="textSize * 1.35"
+            ></up-icon>
+            <text
+                class="up-button__text"
+                :style="[
+                    {
+                        marginLeft: icon ? '2px' : 0,
+                    },
+                    nvueTextStyle,
+                ]"
+                :class="[plain && `up-button__text--plain--${type}`]"
+                >{{ text }}</text
+            >
+        </template>
+    </view>
+    <!-- #endif -->
 </template>
 
-<script>
+<script lang="ts">
 import { buttonMixin } from "../../libs/mixin/button.js";
 import { openType } from "../../libs/mixin/openType.js";
 import { mpMixin } from '../../libs/mixin/mpMixin.js';
 import { mixin } from '../../libs/mixin/mixin.js';
-import { props } from './props.js';
+import { propsButton } from "./props.js";
 import { addStyle } from '../../libs/function/index.js';
 import { throttle } from '../../libs/function/throttle.js';
 import color from '../../libs/config/color.js';
@@ -112,7 +164,12 @@ import color from '../../libs/config/color.js';
  */
 export default {
     name: "up-button",
-    mixins: [props],
+    // #ifdef MP
+    mixins: [mpMixin, mixin, buttonMixin, openType, propsButton],
+    // #endif
+    // #ifndef MP
+    mixins: [mpMixin, mixin, propsButton],
+    // #endif
     data() {
         return {};
     },
@@ -226,19 +283,19 @@ export default {
             }
         },
         // 下面为对接uniapp官方按钮开放能力事件回调的对接
-        getphonenumber(res) {
+        getphonenumber(res: any) {
             this.$emit("getphonenumber", res);
         },
-        getuserinfo(res) {
+        getuserinfo(res: any) {
             this.$emit("getuserinfo", res);
         },
-        error(res) {
+        error(res: any) {
             this.$emit("error", res);
         },
-        opensetting(res) {
+        opensetting(res: any) {
             this.$emit("opensetting", res);
         },
-        launchapp(res) {
+        launchapp(res: any) {
             this.$emit("launchapp", res);
         },
         agreeprivacyauthorization(res) {
@@ -251,7 +308,13 @@ export default {
 <style lang="scss" scoped>
 @import "../../libs/css/components.scss";
 
+/* #ifndef APP-NVUE */
 @import "./vue.scss";
+/* #endif */
+
+/* #ifdef APP-NVUE */
+@import "./nvue.scss";
+/* #endif */
 
 $up-button-up-button-height: 40px !default;
 $up-button-text-font-size: 15px !default;

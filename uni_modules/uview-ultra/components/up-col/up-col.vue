@@ -13,7 +13,7 @@
 </template>
 
 <script>
-	import { props } from './props.js';
+	import { propsCol } from './props.js';
 	import { mpMixin } from '../../libs/mixin/mpMixin.js';
 	import { mixin } from '../../libs/mixin/mixin.js';
 	import { addStyle, addUnit, deepMerge, getPx } from '../../libs/function/index.js';
@@ -32,7 +32,7 @@
 	 */
 	export default {
 		name: 'up-col',
-		mixins: [props],
+		mixins: [mpMixin, mixin, propsCol],
 		data() {
 			return {
 				width: 0,

@@ -32,7 +32,7 @@
 </template>
 
 <script>
-	import { props } from './props.js';
+	import { propsBox } from './props.js';
 	import { mpMixin } from '../../libs/mixin/mpMixin.js';
 	import { mixin } from '../../libs/mixin/mixin.js';
 	import { addStyle } from '../../libs/function/index.js';
@@ -55,7 +55,7 @@
 			return {
 			}
 		},
-		mixins: [props],
+		mixins: [mpMixin, mixin, propsBox],
 		computed: {
 		},
 		emits: [],

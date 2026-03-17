@@ -18,7 +18,7 @@ export default {
 		clearable: false,
 		password: false,
 		maxlength: 140,
-		placeholder: '',
+		placeholder: null,
 		placeholderClass: 'input-placeholder',
 		placeholderStyle: 'color: #c0c4cc',
 		showWordLimit: false,
@@ -43,7 +43,6 @@ export default {
 		border: 'surround',
 		readonly: false,
 		shape: 'square',
-		ignoreCompositionEvent: true,
 		formatter: function() {}
 	}
 } as UTSJSONObject
