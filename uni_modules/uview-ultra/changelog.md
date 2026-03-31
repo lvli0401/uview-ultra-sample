@@ -1,3 +1,84 @@
+## 4.2.60（2026-03-08）
+refactor: 【组合式API重构】 up-gap组件（uni-app-x）
+
+## 4.2.59（2026-03-07）
+refactor: 【组合式API重构】 优化up-loading-icon、up-index-anchor等（uni-app-x）
+
+## 4.2.58（2026-03-07）
+refactor: 【组合式API重构】 优化up-td、up-row等（uni-app-x）
+
+## 4.2.57（2026-03-06）
+refactor: 【组合式API重构】 优化up-waterfall（uni-app-x）
+
+## 4.2.56（2026-03-05）
+refactor: 【组合式API重构】 优化getParent（uni-app-x）
+
+## 4.2.55（2026-03-05）
+refactor: 【组合式API重构】 优化colorGradent支持常用名称颜色（uni-app-x）
+
+## 4.2.54（2026-03-04）
+refactor: 【组合式API重构】 优化index.uts（uni-app-x）
+
+## 4.2.53（2026-03-02）
+refactor: 【组合式API重构】 up-column-notice组件（uni-app-x）
+
+## 4.2.52（2026-02-27）
+refactor: 【组合式API重构】 up-car-keyboard组件（uni-app-x）
+
+## 4.2.51（2026-02-26）
+refactor: 【组合式API重构】 up-button组件（uni-app-x）
+
+## 4.2.50（2026-02-26）
+refactor: 【组合式API重构】 up-icon组件（uni-app-x）
+
+## 4.2.49（2026-02-25）
+refactor: 【组合式API重构】 up-image组件（uni-app-x）
+
+## 4.2.48（2026-02-23）
+refactor: 【组合式API重构】 up-input输入框组件（uni-app-x）
+
+## 4.2.47（2026-02-14）
+refactor: 【组合式API重构】 up-grid宫格组件（uni-app-x）
+
+## 4.2.46（2026-02-13）
+refactor: 【组合式API重构】 up-index-list索引列表组件（uni-app-x）
+
+## 4.2.45（2026-02-12）
+refactor: 【组合式API重构】 修复up-row-notice组件在app-android箭头函数导致递归报错（uni-app-x）
+
+## 4.2.44（2026-02-12）
+refactor: 【组合式API重构】 up-datetime-picker组件（uni-app-x）
+
+## 4.2.43（2026-02-09）
+refactor: 【组合式API重构】 up-row-notice组件（uni-app-x）
+
+## 4.2.42（2026-02-07）
+refactor: 【组合式API重构】 up-collapse组件（uni-app-x）
+
+## 4.2.41（2026-02-07）
+refactor: 【组合式API重构】 优化up-action-sheet组件（uni-app-x）
+
+## 4.2.40（2026-02-06）
+refactor: 【组合式API重构】 修复up-cell组件（uni-app-x）
+
+## 4.2.39（2026-02-06）
+improvment: 优化mixin等
+
+## 4.2.38（2026-02-05）
+refactor: 【组合式API重构】 支持template中使用$u.addUnit $u.addStyle $u.timeFormat（uni-app-x）
+
+## 4.2.37（2026-02-05）
+refactor: 【组合式API重构】 新增up-title组件（uni-app-x）
+
+## 4.2.36（2026-02-05）
+refactor: 【组合式API重构】 up-card组件（uni-app-x）
+
+## 4.2.35（2026-02-04）
+refactor: 【组合式API重构】 up-cell组件（uni-app-x）
+
+## 4.2.34（2026-02-03）
+refactor: 【组合式API重构】 up-cell-group组件（uni-app-x）
+
 ## 4.2.33（2026-02-03）
 refactor: 【组合式API重构】 up-box组件（uni-app-x）
 
